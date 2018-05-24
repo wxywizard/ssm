@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>一款基于JQuery做的动画背景后台管理登录模板 - </title>
+
+<link href="css/main.css" rel="stylesheet" type="text/css" />
+
+</head>
+<body>
+<div class="login">
+    <div class="box png">
+		<div class="logo png"></div>
+		<div class="input">
+			<div class="log">
+				<div class="name">
+					<label>学号/工号</label><input type="text" class="text" id="value_1" placeholder="学号/工号" name="value_1" tabindex="1">
+				</div>
+				<div class="pwd">
+					<label>密　码</label><input type="password" class="text" id="value_2" placeholder="密码" name="value_2" tabindex="2">
+					<input id = "btn" type="button" class="submit" tabindex="3" value="登录">
+					<div class="check"></div>
+				</div>
+				<div class="tip"></div>
+			</div>
+		</div>
+	</div>
+    <div class="footer"></div>
+</div>
+
+<script type="text/javascript" src="js/jQuery.js"></script>
+<script type="text/javascript" src="js/fun.base.js"></script>
+
+</body>
+<script type="text/javascript">
+      $(function(){
+    	  $("#btn").click(function(){
+    		  var schoolNumber = $("#value_1").val();
+    		  var password = $("#value_2").val();
+    		  if(schoolNumber == ""){
+    			  alert("请输入用户名！");
+    		  }
+    		  if(password == ""){
+    			  alert("请输入密码！");
+    		  }
+    		  if(schoolNumber!= "" && password != ""){
+         		  $.ajax({
+       			   type: "POST",
+       			   url: "login.action",
+       			   data: {"schoolNumber": schoolNumber,"password":password},
+       		       dataType: 'text',
+       			   success: function(msg){
+     			     if(msg == "index"){
+       			    	    window.location.href="index.html";
+       			     }else if(msg == "stuindex"){
+          			    	window.location.href="stuindex.html";
+          			 }else if(msg == "tchindex"){
+          			    	window.location.href="tchindex.html";
+          			 }else{
+       			    	alert("用户名或密码错误！");
+       			    }
+     			     
+       			   }
+       			}); 
+    		  }
+
+    	  })
+      })
+</script>
+
+</html>

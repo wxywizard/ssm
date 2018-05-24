@@ -1,0 +1,987 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>欢迎登录系统</title>
+        <!-- Mobile specific metas -->
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+        <!-- Force IE9 to render in normal mode -->
+        <!--[if IE]><meta http-equiv="x-ua-compatible" content="IE=9" /><![endif]-->
+        <meta name="author" content="wxy" />
+        <meta name="description" content=""
+        />
+        <meta name="keywords" content=""
+        />
+        <meta name="application-name" content="sprFlat admin template" />
+        <!-- Import google fonts - Heading first/ text second -->
+        <link rel='stylesheet' type='text/css' />
+        <!--[if lt IE 9]>
+
+<![endif]-->
+        <!-- Css files -->
+        <!-- Icons -->
+        <link href="assets/css/icons.css" rel="stylesheet" />
+        <!-- jQueryUI -->
+        <link href="assets/css/sprflat-theme/jquery.ui.all.css" rel="stylesheet" />
+        <!-- Bootstrap stylesheets (included template modifications) -->
+        <link href="assets/css/bootstrap.css" rel="stylesheet" />
+        <!-- Plugins stylesheets (all plugin custom css) -->
+        <link href="assets/css/plugins.css" rel="stylesheet" />
+        <!-- Main stylesheets (template main css file) -->
+        <link href="assets/css/main.css" rel="stylesheet" />
+        <!-- Custom stylesheets ( Put your own changes here ) -->
+        <link href="assets/css/custom.css" rel="stylesheet" />
+        <!-- Fav and touch icons -->
+        <link rel="apple-touch-icon-precomposed" sizes="144x144" href="assets/img/ico/apple-touch-icon-144-precomposed.png">
+        <link rel="apple-touch-icon-precomposed" sizes="114x114" href="assets/img/ico/apple-touch-icon-114-precomposed.png">
+        <link rel="apple-touch-icon-precomposed" sizes="72x72" href="assets/img/ico/apple-touch-icon-72-precomposed.png">
+        <link rel="apple-touch-icon-precomposed" href="assets/img/ico/apple-touch-icon-57-precomposed.png">
+        <link rel="icon" href="assets/img/ico/favicon.ico" type="image/png">
+        <!-- Windows8 touch icon ( http://www.buildmypinnedsite.com/ )-->
+		<link href="assets/css/themes/default/easyui.css" rel="stylesheet" />
+		<link href="assets/css/easyui.css" rel="stylesheet" />
+	
+        <meta name="msapplication-TileColor" content="#3399cc" />
+    </head>
+    <body>
+        <!-- Start #header -->
+        <div id="header">
+            <div class="container-fluid">
+                <div class="navbar">
+                    <div class="navbar-header">
+                        <a class="navbar-brand" href="index.html">
+                            <i class="im-windows8 text-logo-element animated bounceIn"></i><span class="text-logo">spr</span><span class="text-slogan">flat</span> 
+                        </a>
+                    </div>
+                    <nav class="top-nav" role="navigation">
+                        <ul class="nav navbar-nav pull-left">
+                            <!--<li id="toggle-sidebar-li">
+                                <a href="#" id="toggle-sidebar"><i class="en-arrow-left2"></i></a>
+                            </li>-->
+                        </ul>
+                        <ul class="nav navbar-nav pull-right">
+
+                            <li class="dropdown">
+                                <a href="#" data-toggle="dropdown">
+                                    <img class="user-avatar" src="assets/img/avatars/48.jpg" alt="SuggeElson" ><span id="loginUser">SuggeElson</span></a>
+                                <ul class="dropdown-menu right" role="menu">
+                                    <li id="settings"><a href="#"><i class="st-settings"></i> Settings</a>
+                                    </li>
+                                    <li><a href="login.html"><i class="im-exit"></i> Logout</a>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+                <!-- Start #header-area -->
+
+                <!-- End #header-area -->
+            </div>
+            <!-- Start .header-inner -->
+        </div>
+        <!-- End #header -->
+        <!-- Start #sidebar -->
+        <div id="sidebar">
+            <!-- Start .sidebar-inner -->
+            <div class="sidebar-inner">
+                <!-- Start #sideNav -->
+                <ul id="sideNav" class="nav nav-pills nav-stacked">
+                   
+                    <li><a href="#" id="Left_1">查看实验信息介绍<i class="im-screen"></i></a>
+                    </li>
+                    <li><a href="#" id="Left_2">查看个人实验成绩<i class="st-chart"></i></a>
+                    </li>
+                    <li><a href="#" id="Left_3">自主预约实验课程<i class="en-upload"></i></a>
+                    </li>
+                    <li><a href="#" id="Left_4"><i class="br-window"></i> 查看系统公告</a>
+                    </li>
+
+
+                </ul>
+                <!-- End #sideNav -->
+                <!-- Start .sidebar-panel -->
+                <!-- End .sidebar-panel -->
+            </div>
+            <!-- End .sidebar-inner -->
+        </div>
+        <!-- End #sidebar -->
+        <!-- Start #right-sidebar -->
+        <div id="right-sidebar" class="hide-sidebar">
+            <!-- Start .sidebar-inner -->
+            <div class="sidebar-inner">
+                <div class="sidebar-panel mt0">
+                    <div class="sidebar-panel-content fullwidth pt0">
+                        <div class="chat-user-list">
+                            <form class="form-horizontal chat-search" role="form">
+                                <div class="form-group">
+                                    <input type="text" class="form-control" placeholder="Search for user...">
+                                    <button type="submit"><i class="ec-search s16"></i>
+                                    </button>
+                                </div>
+                                <!-- End .form-group  -->
+                            </form>
+                            <ul class="chat-ui bsAccordion">
+                                <li>
+                                    <a href="#">Favorites <span class="notification teal">4</span><i class="en-arrow-down5"></i></a>
+                                    <ul class="in">
+                                        <li>
+                                            <a href="#" class="chat-name">
+                                                <img class="chat-avatar" src="assets/img/avatars/49.jpg" alt="@chadengle">Chad Engle
+                                                <span class="has-message"><i class="im-pencil"></i></span>
+                                            </a>
+                                            <span class="status online"><i class="en-dot"></i></span>
+                                        </li>
+                                        <li>
+                                            <a href="#" class="chat-name">
+                                                <img class="chat-avatar" src="assets/img/avatars/54.jpg" alt="@alagoon">Anthony Lagoon</a>
+                                            <span class="status offline"><i class="en-dot"></i></span>
+                                        </li>
+                                        <li>
+                                            <a href="#" class="chat-name">
+                                                <img class="chat-avatar" src="assets/img/avatars/52.jpg" alt="@koridhandy">Kory Handy</a>
+                                            <span class="status"><i class="en-dot"></i></span>
+                                        </li>
+                                        <li>
+                                            <a href="#" class="chat-name">
+                                                <img class="chat-avatar" src="assets/img/avatars/50.jpg" alt="@divya">Divia Manyan</a>
+                                            <span class="status"><i class="en-dot"></i></span>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="#">Online <span class="notification green">3</span><i class="en-arrow-down5"></i></a>
+                                    <ul class="in">
+                                        <li>
+                                            <a href="#" class="chat-name">
+                                                <img class="chat-avatar" src="assets/img/avatars/51.jpg" alt="@kolage">Eric Hofman</a>
+                                            <span class="status online"><i class="en-dot"></i></span>
+                                        </li>
+                                        <li>
+                                            <a href="#" class="chat-name">
+                                                <img class="chat-avatar" src="assets/img/avatars/55.jpg" alt="@mikebeecham">Mike Beecham</a>
+                                            <span class="status online"><i class="en-dot"></i></span>
+                                        </li>
+                                        <li>
+                                            <a href="#" class="chat-name">
+                                                <img class="chat-avatar" src="assets/img/avatars/53.jpg" alt="@derekebradley">Darek Bradly</a>
+                                            <span class="status online"><i class="en-dot"></i></span>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="#">Offline <span class="notification red">5</span><i class="en-arrow-down5"></i></a>
+                                    <ul>
+                                        <li>
+                                            <a href="#" class="chat-name">
+                                                <img class="chat-avatar" src="assets/img/avatars/56.jpg" alt="@laurengray">Lauren Grey</a>
+                                            <span class="status offline"><i class="en-dot"></i></span>
+                                        </li>
+                                        <li>
+                                            <a href="#" class="chat-name">
+                                                <img class="chat-avatar" src="assets/img/avatars/49.jpg" alt="@chadengle">Chad Engle</a>
+                                            <span class="status offline"><i class="en-dot"></i></span>
+                                        </li>
+                                        <li>
+                                            <a href="#" class="chat-name">
+                                                <img class="chat-avatar" src="assets/img/avatars/58.jpg" alt="@frankiefreesbie">Frankie Freesibie</a>
+                                            <span class="status offline"><i class="en-dot"></i></span>
+                                        </li>
+                                        <li>
+                                            <a href="#" class="chat-name">
+                                                <img class="chat-avatar" src="assets/img/avatars/57.jpg" alt="@joannefournier">Joane Fornier</a>
+                                            <span class="status offline"><i class="en-dot"></i></span>
+                                        </li>
+                                        <li>
+                                            <a href="#" class="chat-name">
+                                                <img class="chat-avatar" src="assets/img/avatars/59.jpg" alt="@aiiaiiaii">Alia Alien</a>
+                                            <span class="status offline"><i class="en-dot"></i></span>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="chat-box">
+                            <h5>Chad Engle</h5>
+                            <a id="close-user-chat" href="#" class="btn btn-xs btn-primary"><i class="en-arrow-left4"></i></a>
+                            <ul class="chat-ui chat-messages">
+                                <li class="chat-user">
+                                    <p class="avatar">
+                                        <img src="assets/img/avatars/49.jpg" alt="@chadengle">
+                                    </p>
+                                    <p class="chat-name">Chad Engle <span class="chat-time">15 seconds ago</span>
+                                    </p>
+                                    <span class="status online"><i class="en-dot"></i></span>
+                                    <p class="chat-txt">Hello Sugge check out the last order.</p>
+                                </li>
+                                <li class="chat-me">
+                                    <p class="avatar">
+                                        <img src="assets/img/avatars/48.jpg" alt="SuggeElson">
+                                    </p>
+                                    <p class="chat-name">SuggeElson <span class="chat-time">10 seconds ago</span>
+                                    </p>
+                                    <span class="status online"><i class="en-dot"></i></span>
+                                    <p class="chat-txt">Ok i will check it out.</p>
+                                </li>
+                                <li class="chat-user">
+                                    <p class="avatar">
+                                        <img src="assets/img/avatars/49.jpg" alt="@chadengle">
+                                    </p>
+                                    <p class="chat-name">Chad Engle <span class="chat-time">now</span>
+                                    </p>
+                                    <span class="status online"><i class="en-dot"></i></span>
+                                    <p class="chat-txt">Thank you, have a nice day</p>
+                                </li>
+                            </ul>
+                            <div class="chat-write">
+                                <form action="#" class="form-horizontal" role="form">
+                                    <div class="form-group">
+                                        <textarea name="sendmsg" id="sendMsg" class="form-control elastic" rows="1"></textarea>
+                                        <a role="button" class="btn" id="attach_photo_btn">
+                                            <i class="fa-picture s20"></i> 
+                                        </a>
+                                        <input type="file" name="attach_photo" id="attach_photo">
+                                    </div>
+                                    <!-- End .form-group  -->
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- End .sidebar-inner -->
+        </div>
+        <!-- End #right-sidebar -->
+        <!-- Start #content -->
+        <div id="content">
+            <!-- Start .content-wrapper -->
+            <div class="content-wrapper">
+                <div class="row">
+                    <!-- Start .row -->
+                    <!-- Start .page-header -->
+                    <div class="col-lg-12 heading">
+                        <h1 class="page-header"><i class="im-paragraph-justify"></i><span id="title"> Forms</span></h1>
+                        <!-- Start .bredcrumb -->
+                        <!-- End .breadcrumb -->
+                        <!-- Start .option-buttons -->
+                        <div class="option-buttons">
+                            <div class="btn-toolbar" role="toolbar">
+                                <div class="btn-group">
+                                    <a id="clear-localstorage" class="btn tip" title="Reset panels position">
+                                        <i class="ec-refresh color-red s24"></i>
+                                    </a>
+                                </div>
+                                <div class="btn-group dropdown">
+                                    <a class="btn dropdown-toggle" data-toggle="dropdown" id="dropdownMenu1"><i class="br-grid s24"></i></a>
+                                    <div class="dropdown-menu pull-right" role="menu" aria-labelledby="dropdownMenu1">
+                                        <div class="option-dropdown">
+                                            <div class="shortcut-button">
+                                                <a href="#">
+                                                    <i class="im-pie"></i>
+                                                    <span>Earning Stats</span>
+                                                </a>
+                                            </div>
+                                            <div class="shortcut-button">
+                                                <a href="#">
+                                                    <i class="ec-images color-dark"></i>
+                                                    <span>Gallery</span>
+                                                </a>
+                                            </div>
+                                            <div class="shortcut-button">
+                                                <a href="#">
+                                                    <i class="en-light-bulb color-orange"></i>
+                                                    <span>Fresh ideas</span>
+                                                </a>
+                                            </div>
+                                            <div class="shortcut-button">
+                                                <a href="#">
+                                                    <i class="ec-link color-blue"></i>
+                                                    <span>Links</span>
+                                                </a>
+                                            </div>
+                                            <div class="shortcut-button">
+                                                <a href="#">
+                                                    <i class="ec-support color-red"></i>
+                                                    <span>Support</span>
+                                                </a>
+                                            </div>
+                                            <div class="shortcut-button">
+                                                <a href="#">
+                                                    <i class="st-lock color-teal"></i>
+                                                    <span>Lock area</span>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="btn-group dropdown">
+                                    <a class="btn dropdown-toggle" data-toggle="dropdown" id="dropdownMenu2"><i class="ec-pencil s24"></i></a> 
+                                    <div class="dropdown-menu pull-right" role="menu" aria-labelledby="dropdownMenu2">
+                                        <div class="option-dropdown">
+                                            <div class="row">
+                                                <p class="col-lg-12">Quick post</p>
+                                                <form class="form-horizontal" role="form">
+                                                    <div class="form-group">
+                                                        <div class="col-lg-12">
+                                                            <input type="text" class="form-control" placeholder="Enter title">
+                                                        </div>
+                                                    </div>
+                                                    <!-- End .form-group  -->
+                                                    <div class="form-group">
+                                                        <div class="col-lg-12">
+                                                            <textarea class="form-control wysiwyg" placeholder="Enter text"></textarea>
+                                                        </div>
+                                                    </div>
+                                                    <!-- End .form-group  -->
+                                                    <div class="form-group">
+                                                        <div class="col-lg-12">
+                                                            <input type="text" class="form-control tags1" placeholder="Enter tags">
+                                                        </div>
+                                                    </div>
+                                                    <!-- End .form-group  -->
+                                                    <div class="form-group">
+                                                        <div class="col-lg-12">
+                                                            <button class="btn btn-default btn-xs">Save Draft</button>
+                                                            <button class="btn btn-success btn-xs pull-right">Publish</button>
+                                                        </div>
+                                                    </div>
+                                                    <!-- End .form-group  -->
+                                                </form>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="btn-group">
+                                    <a class="btn dropdown-toggle" data-toggle="dropdown" id="dropdownMenu3"><i class="ec-help s24"></i></a>
+                                    <div class="dropdown-menu pull-right" role="menu" aria-labelledby="dropdownMenu3">
+                                        <div class="option-dropdown">
+                                            <p>First time visitor ? <a href="#" id="app-tour" class="btn btn-success ml15">Take app tour</a> 
+                                            </p>
+                                            <hr>
+                                            <p>Or check the <a href="#" class="btn btn-danger ml15">FAQ</a>
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- End .option-buttons -->
+                    </div>
+                    <!-- End .page-header -->
+                </div>
+                <!-- End .row -->
+                <div class="outlet">
+                    <!-- Start .outlet -->
+
+                    <div id="cent_1" style="width:100%">
+                             <button id="updateStatus" type="button" class="btn btn-success mr15 mb15" style="margin-left:1%">修改为完成状态</button>
+                          	    <!-- datagrid start -->
+							   <div role="tabpanel" class="tab-pane" id="bl4" style="padding-left:15px;" >
+									<table id="tab1" class="table table-bordered table-striped tabMaoli" width="100%" border="0" cellspacing="0" cellpadding="0">
+									  <tbody>
+										
+									  </tbody>
+									</table>
+								</div>
+								<!-- datagrid end -->
+                     </div>
+                     <div id="cent_2">
+                               <!-- datagrid start -->
+							   <div role="tabpanel" class="tab-pane" id="bl4" style="padding-left:15px;" >
+									<table id="tab2" class="table table-bordered table-striped tabMaoli" width="100%" border="0" cellspacing="0" cellpadding="0">
+									  <tbody>
+										
+									  </tbody>
+									</table>
+								</div>
+								<!-- datagrid end -->
+                     </div>
+                     <div id="cent_3">
+                               <button id="selectCourse" type="button" class="btn btn-success mr15 mb15" style="margin-left:1%">确认预约</button>
+                               <button id="selectUpload" type="button" class="btn btn-success mr15 mb15" style="margin-left:1%">上传实验报告</button>
+                                <!-- datagrid start -->
+							   <div role="tabpanel" class="tab-pane" id="bl4" style="padding-left:15px;" >
+									<table id="tab3" class="table table-bordered table-striped tabMaoli" width="100%" border="0" cellspacing="0" cellpadding="0">
+									  <tbody>
+										
+									  </tbody>
+									</table>
+								</div>
+								<!-- datagrid end -->
+                     </div>
+                     <div id="cent_4">
+                            <!-- datagrid start -->
+							   <div role="tabpanel" class="tab-pane" id="bl4" style="padding-left:15px;" >
+									<table id="tab4" class="table table-bordered table-striped tabMaoli" width="100%" border="0" cellspacing="0" cellpadding="0">
+									  <tbody>
+										
+									  </tbody>
+									</table>
+								</div>
+								<!-- datagrid end -->
+                     </div>
+	                   
+	                   
+	                     <!-- 模态框（Modal）start -->
+						<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" >
+							<div class="modal-dialog" style="width:800px; height:500px;">
+								<div class="modal-content"">
+									<div class="modal-header">
+										<button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+											&times;
+										</button>
+										<h4 class="modal-title" id="myModalLabel">
+											个人信息
+										</h4>
+									</div>
+									<div class="modal-body">
+										     <div class="row">
+	                        <!-- Start .row -->
+	                        <div class="col-lg-12">
+	                            <!-- Start col-lg-12 -->
+	                            <div class="panel panel-default toggle">
+	                                <!-- Start .panel -->
+	                                <div class="panel-heading">
+	                                    <h3 class="panel-title">查看或修改个人信息</h3>
+	                                </div>
+	                                <div class="panel-body">
+	                                    <form class="form-horizontal group-border" role="form">
+	                                    
+	                                       <div class="form-group">
+	                                            <label class="col-lg-2 col-md-2 col-sm-12 control-label">姓名</label>
+	                                            <div class="col-lg-10 col-md-10">
+	                                                <input type="text" class="form-control" disabled="disabled" placeholder="" autofocus="autofocus" id="formUserName">
+	                                            </div>
+	                                        </div>
+	                                        
+	                                       <div class="form-group">
+	                                            <label class="col-lg-2 col-md-2 col-sm-12 control-label">密码</label>
+	                                            <div class="col-lg-10 col-md-10">
+	                                                <input type="text" class="form-control" placeholder="" autofocus="autofocus" id="formPassword">
+	                                            </div>
+	                                        </div>
+	                                        
+	                                       <div class="form-group">
+	                                            <label class="col-lg-2 col-md-2 col-sm-12 control-label">学号或工号</label>
+	                                            <div class="col-lg-10 col-md-10">
+	                                                <input type="text" class="form-control" disabled="disabled" placeholder="" autofocus="autofocus" id="formSchoolNumber">
+	                                            </div>
+	                                        </div>
+	                                        
+	                                        <div class="form-group">
+	                                            <label class="col-lg-2 col-md-2 col-sm-12 control-label">身份信息</label>
+	                                            <div class="col-lg-10 col-md-10">
+	                                                <input type="text" class="form-control" disabled="disabled" placeholder="" autofocus="autofocus" id="formIdentity">
+	                                            </div>
+	                                        </div>
+	                                        
+	                                        <div class="form-group">
+	                                            <label class="col-lg-2 col-md-2 col-sm-12 control-label">年龄</label>
+	                                            <div class="col-lg-10 col-md-10">
+	                                                <input type="text" class="form-control" placeholder="" autofocus="autofocus" id="formAge">
+	                                            </div>
+	                                        </div>
+	                                        
+	                                         <div class="form-group">
+	                                            <label class="col-lg-2 col-md-2 col-sm-12 control-label">地址</label>
+	                                            <div class="col-lg-10 col-md-10">
+	                                                <input type="text" class="form-control" placeholder="" autofocus="autofocus" id="formAddress">
+	                                            </div>
+	                                        </div>
+	                            
+
+	                                        <!-- End .form-group  -->
+	                                    </form>
+	                                </div>
+	                            </div>
+	                            <!-- End .panel -->
+	                        </div>
+	                        <!-- End col-lg-12 -->
+	                    </div>
+									</div>
+									<div class="modal-footer">
+										<button type="button" class="btn btn-default" data-dismiss="modal">关闭
+										</button>
+										<button type="button" class="btn btn-primary" id="updateBtn">
+											提交更改
+										</button>
+									</div>
+								</div><!-- /.modal-content -->
+							</div><!-- /.modal -->
+						</div>
+						<!-- 模态框（Modal）end -->
+						
+						<!-- 模态框（Modal）start -->
+						<div class="modal fade" id="myModalUpload" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" >
+							<div class="modal-dialog" style="width:800px; height:500px;">
+								<div class="modal-content"">
+									<div class="modal-header">
+										<button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+											&times;
+										</button>
+										<h4 class="modal-title" id="myModalLabel">
+											上传实验报告
+										</h4>
+									</div>
+									<div class="modal-body">
+				                    <form id="uploadPic" action="#" enctype="multipart/form-data">  
+                                       
+                                            <input  type="file" name="file"/>   
+                                            
+                                     </form>  
+	                                   
+	           
+									</div>
+									<div class="modal-footer">
+										<button type="button" class="btn btn-default" data-dismiss="modal">关闭
+										</button>
+								       <button type="button" class="btn btn-primary" id="uploadBTN">
+											上传
+										</button> 
+									</div>
+								</div><!-- /.modal-content -->
+							</div><!-- /.modal -->
+						</div>
+						<!-- 模态框（Modal）end -->
+						
+                </div>
+                <!-- End .outlet -->
+            </div>
+            <!-- End .content-wrapper -->
+            <div class="clearfix"></div>
+        </div>
+        <!-- End #content -->
+        <!-- Javascripts -->
+        <!-- Load pace first -->
+        <script src="assets/plugins/core/pace/pace.min.js"></script>
+        <!-- Important javascript libs(put in all pages) -->
+        <script src="assets/js/jquery-1.8.3.min.js"></script>
+        <script>
+        window.jQuery || document.write('<script src="assets/js/libs/jquery-2.1.1.min.js">\x3C/script>')
+        </script>
+        <script src="http://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+        <script>
+        window.jQuery || document.write('<script src="assets/js/libs/jquery-ui-1.10.4.min.js">\x3C/script>')
+        </script>
+        <!--[if lt IE 9]>
+  <script type="text/javascript" src="assets/js/libs/excanvas.min.js"></script>
+  <script type="text/javascript" src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+  <script type="text/javascript" src="assets/js/libs/respond.min.js"></script>
+<![endif]-->
+        <!-- Bootstrap plugins -->
+        <script src="assets/js/bootstrap/bootstrap.js"></script>
+		
+
+        <!-- Core plugins ( not remove ever) -->
+        <!-- Handle responsive view functions -->
+        <script src="assets/js/jRespond.min.js"></script>
+        <!-- Custom scroll for sidebars,tables and etc. -->
+        <script src="assets/plugins/core/slimscroll/jquery.slimscroll.min.js"></script>
+        <script src="assets/plugins/core/slimscroll/jquery.slimscroll.horizontal.min.js"></script>
+        <!-- Resize text area in most pages -->
+        <script src="assets/plugins/forms/autosize/jquery.autosize.js"></script>
+        <!-- Proivde quick search for many widgets -->
+        <script src="assets/plugins/core/quicksearch/jquery.quicksearch.js"></script>
+        <!-- Bootbox confirm dialog for reset postion on panels -->
+        <script src="assets/plugins/ui/bootbox/bootbox.js"></script>
+        <!-- Other plugins ( load only nessesary plugins for every page) -->
+        <script type="text/javascript" src="assets/plugins/core/moment/moment.min.js"></script>
+        <script type="text/javascript" src="assets/plugins/charts/sparklines/jquery.sparkline.js"></script>
+        <script type="text/javascript" src="assets/plugins/charts/pie-chart/jquery.easy-pie-chart.js"></script>
+        <script type="text/javascript" src="assets/plugins/forms/icheck/jquery.icheck.js"></script>
+        <script type="text/javascript" src="assets/plugins/forms/tags/jquery.tagsinput.min.js"></script>
+        <script type="text/javascript" src="assets/plugins/forms/tinymce/tinymce.min.js"></script>
+        <script type="text/javascript" src="assets/plugins/forms/switch/jquery.onoff.min.js"></script>
+        <script type="text/javascript" src="assets/plugins/forms/maxlength/bootstrap-maxlength.js"></script>
+        <script type="text/javascript" src="assets/plugins/forms/bootstrap-filestyle/bootstrap-filestyle.js"></script>
+        <script type="text/javascript" src="assets/plugins/forms/color-picker/spectrum.js"></script>
+        <script type="text/javascript" src="assets/plugins/forms/daterangepicker/daterangepicker.js"></script>
+        <script type="text/javascript" src="assets/plugins/forms/datetimepicker/bootstrap-datetimepicker.min.js"></script>
+        <script type="text/javascript" src="assets/plugins/forms/globalize/globalize.js"></script>
+        <script type="text/javascript" src="assets/plugins/forms/maskedinput/jquery.maskedinput.js"></script>
+        <script type="text/javascript" src="assets/plugins/forms/select2/select2.js"></script>
+        <script type="text/javascript" src="assets/plugins/forms/dual-list-box/jquery.bootstrap-duallistbox.js"></script>
+        <script type="text/javascript" src="assets/plugins/forms/password/jquery-passy.js"></script>
+        <script type="text/javascript" src="assets/plugins/forms/checkall/jquery.CheckAll.js"></script>
+        <script type="text/javascript" src="assets/plugins/misc/highlight/highlight.pack.js"></script>
+        <script type="text/javascript" src="assets/plugins/misc/countTo/jquery.countTo.js"></script>
+        <script type="text/javascript" src="assets/js/jquery.sprFlat.js"></script>
+        <script type="text/javascript" src="assets/js/app.js"></script>
+        <script type="text/javascript" src="assets/js/pages/forms.js"></script>
+		<script type="text/javascript" src="assets/js/jquery.easyui.min.js"></script>
+		<script type="text/javascript" src="assets/js/easyui-lang-zh_CN.js"></script>
+
+		<script>
+		        $(function(){
+				
+	         		  $.ajax({
+	          			   type: "POST",
+	          			   url: "loginUser.action",
+	          			   data: {},
+	          		       dataType: 'json',
+	          		       contentType: "application/x-www-form-urlencoded; charset=utf-8", 
+	          			   success: function(msg){
+	          				 $("#loginUser").text(msg.userName);
+	          				 $("#title").text("欢迎"+msg.userName+"登录系统");
+	          			   }
+	          			});
+
+				      //隐藏div
+				      $("#cent_1").hide();
+				      $("#cent_2").hide();
+				      $("#cent_3").hide();
+				      $("#cent_4").hide();
+
+		         		 $("#settings").click(function(){					  
+						     $('#myModal').modal('show');
+						     //回填人员信息
+						     var  schoolNumber = $("#schoolNumber").text();
+			         		  $.ajax({
+			          			   type: "POST",
+			          			   url: "findUserInfo.action",
+			          			   data: {},
+			          		       dataType: 'json',
+			          			   success: function(msg){
+			          				 $("#formUserName").val(msg.userName);
+			          				 $("#formPassword").val(msg.password);
+			          				 $("#formSchoolNumber").val(msg.schoolNumber);
+			          				 $("#formIdentity").val(msg.identity);
+			          				 $("#formAge").val(msg.age);
+			          				 $("#formAddress").val(msg.address);	          				  
+			          			   }
+			          			});
+			         		  
+						  })
+
+						  $("#updateBtn").click(function(){	          				
+		          				var formPassword = $("#formPassword").val();
+		          				var formSchoolNumber = $("#formSchoolNumber").val();
+		          				var formAge = $("#formAge").val();
+		          				var formAddress = $("#formAddress").val();
+		          				$.ajax({
+				          			   type: "POST",
+				          			   url: "updateUserInfo.action",
+				          			   data: {'formPassword':formPassword,'formSchoolNumber':formSchoolNumber,'formAge':formAge,'formAddress':formAddress},
+				          		       dataType: 'json',
+				          			   success: function(msg){
+				          				   alert("修改成功！");
+				          			   }
+				          			});
+							  
+						  })
+				
+				      
+				      
+                      leftClick_1();
+                      leftClick_2();
+                      leftClick_3();
+                      leftClick_4();
+				      
+				})
+				
+				function leftClick_1(){
+		        	$("#Left_1").click(function(){
+		        		  $("#cent_1").show();
+					      $("#cent_2").hide();
+					      $("#cent_3").hide();	
+					      $("#cent_4").hide();	
+					      
+					      $("#title").text("查看实验信息介绍");
+					      
+					      $('#tab1').datagrid({
+								url:'findStuCourseInfo.action',
+								remoteSort:false,	
+								fitColumns : true,
+								singleSelect : true,
+								rownumbers : true,
+								nowrap:false,//自动换行
+								striped:true,
+								columns:[[{
+											title : 'id',
+											field : 'id',
+											width : 200,
+											align : 'center',
+											hidden : 'true'
+										}, {
+											title : '选课学生',
+											field : 'student',
+											width : 200,
+											align : 'center'
+										}, {
+											title : '完成状态',
+											field : 'ststus',
+											width : 200,
+											align : 'center',
+											formatter : function(value, row, index ){
+												var str = "";
+												if(value=="1"){
+													str = "已完成";
+												}else{
+													str = "未完成";
+												}
+												return str;
+											}
+										},{
+											title : '指导教师',
+											field : 'teacher',
+											width : 200,
+											align : 'center'
+										},{
+											title : '课程名称',
+											field : 'courseName',
+											width : 200,
+											align : 'center'
+										},{
+											title : '课程描述',
+											field : 'courseinfo',
+											width : 200,
+											align : 'center'
+										}
+										]],		
+								pagination : true,
+								pageSize : 10,
+								pageList : [ 10, 20, 30, 40, 50 ]
+							})
+							
+							$("#updateStatus").click(function(){
+				        		var row = $('#tab1').datagrid('getSelected');
+				        		if (row){
+				        			var id = row.id;
+				        			
+	 		          				$.ajax({
+					          			   type: "POST",
+					          			   url: "updateStatus.action",
+					          			   data: {'id':id},
+					          		       dataType: 'json',
+					          			   success: function(msg){
+					          				   alert("修改成功！");
+					          				 $('#tab1').datagrid("reload");
+					          			   }
+					          			}); 
+				        		 
+				        		}else{
+				        			alert("请选中一行数据！");
+				        		}
+								  
+				        	});
+		        	})
+		        };
+				function leftClick_2(){
+					$("#Left_2").click(function(){
+		        		  $("#cent_1").hide();
+					      $("#cent_2").show();
+					      $("#cent_3").hide();	
+					      $("#cent_4").hide();	
+					      
+					      $("#title").text("查看个人实验成绩");
+
+					      $('#tab2').datagrid({
+								url:'findStuCourseInfo.action',
+								remoteSort:false,	
+								fitColumns : true,
+								singleSelect : true,
+								rownumbers : true,
+								nowrap:false,//自动换行
+								striped:true,
+								columns:[[{
+											title : '选课学生',
+											field : 'student',
+											width : 200,
+											align : 'center'
+										}, {
+											title : '完成状态',
+											field : 'ststus',
+											width : 200,
+											align : 'center',
+											formatter : function(value, row, index ){
+												var str = "";
+												if(value=="1"){
+													str = "已完成";
+												}else{
+													str = "未完成";
+												}
+												return str;
+											}
+										},{
+											title : '指导教师',
+											field : 'teacher',
+											width : 200,
+											align : 'center'
+										},{
+											title : '课程名称',
+											field : 'courseName',
+											width : 200,
+											align : 'center'
+										},{
+											title : '课程描述',
+											field : 'courseinfo',
+											width : 200,
+											align : 'center'
+										},{
+											title : '成绩',
+											field : 'achievement',
+											width : 200,
+											align : 'center'
+										},{
+											title : '时间',
+											field : 'time',
+											width : 200,
+											align : 'center'
+										}
+										]],		
+								pagination : true,
+								pageSize : 10,
+								pageList : [ 10, 20, 30, 40, 50 ]
+							})
+							
+		        	})   	
+				};
+				function leftClick_3(){
+					$("#Left_3").click(function(){
+		        		  $("#cent_1").hide();
+					      $("#cent_2").hide();
+					      $("#cent_3").show();	
+					      $("#cent_4").hide();	
+					      
+					      $("#title").text("自主预约实验课程");
+					      
+					      $('#tab3').datagrid({
+								url:'findCourseAll.action',
+								remoteSort:false,	
+								fitColumns : true,
+								singleSelect : true,
+								rownumbers : true,
+								nowrap:false,//自动换行
+								striped:true,
+								columns:[[{
+											title : 'id',
+											field : 'id',
+											width : 200,
+											align : 'center',
+											hidden : 'true'
+										},{
+											title : 'tchid',
+											field : 'tchid',
+											width : 200,
+											align : 'center',
+											hidden : 'true'
+										},{
+											title : '发布教师',
+											field : 'teacher',
+											width : 200,
+											align : 'center'
+										}, {
+											title : '课程名称',
+											field : 'coursename',
+											width : 200,
+											align : 'center'
+										}, {
+											title : '课程描述',
+											field : 'courseinfo',
+											width : 200,
+											align : 'center'
+										},{
+											title : '发布时间',
+											field : 'time',
+											width : 200,
+											align : 'center'
+										}]],		
+								pagination : true,
+								pageSize : 10,
+								pageList : [ 10, 20, 30, 40, 50 ]
+							})
+							
+				        	$("#selectCourse").click(function(){
+				        		var row = $('#tab3').datagrid('getSelected');
+				        		if (row){
+				        			var tchid = row.tchid;
+				        			var coursename = row.coursename;
+				        			var courseinfo = row.courseinfo;
+				        			
+	 		          				$.ajax({
+					          			   type: "POST",
+					          			   url: "insertStuAppointment.action",
+					          			   data: {'tchid':tchid,'coursename':coursename,'courseinfo':courseinfo},
+					          		       dataType: 'json',
+					          			   success: function(msg){
+					          				   alert("预约成功！");
+					          			   }
+					          			}); 
+				        		 
+				        		}else{
+				        			alert("请选中一行数据！");
+				        		}
+								  
+				        	});
+					      
+					      $("#selectUpload").click(function(){					  
+							     $('#myModalUpload').modal('show');
+							     var formData = new FormData($( "#uploadPic" )[0]); 
+							     $("#uploadBTN").click(function(){
+							    	 $.ajax({  
+							               type: "POST",  
+							               url:"upload.action",  
+							               data:formData, 
+							               // 下面三个参数要指定，如果不指定，会报一个JQuery的错误 
+							                  cache: false,
+							                   contentType: false,
+							                  processData: false,
+							               async: false,  
+							               success: function(data) {  
+							                  
+							               }  
+							           }); 
+					         		  
+					         		  
+					         		  
+							     })
+
+				         		  
+							  })
+							
+					})
+				};
+				
+				function leftClick_4(){
+					$("#Left_4").click(function(){
+		        		  $("#cent_1").hide();
+					      $("#cent_2").hide();
+					      $("#cent_3").hide();	
+					      $("#cent_4").show();	
+					      
+					      $("#title").text("查看系统公告");
+
+					      $('#tab4').datagrid({
+								url:'findSystembulletin.action',
+								remoteSort:false,	
+								fitColumns : true,
+								singleSelect : true,
+								rownumbers : true,
+								nowrap:false,//自动换行
+								striped:true,
+								columns:[[{
+											title : '公告标题',
+											field : 'title',
+											width : 200,
+											align : 'center'
+										}, {
+											title : '公告内容',
+											field : 'info',
+											width : 200,
+											align : 'center'
+										},{
+											title : '创建时间',
+											field : 'time',
+											width : 200,
+											align : 'center'
+										}]],		
+								pagination : true,
+								pageSize : 10,
+								pageList : [ 10, 20, 30, 40, 50 ]
+							})
+							
+		        	})   	
+				};
+		</script>
+    </body>
+</html>

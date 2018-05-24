@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+<mapper namespace="com.wxywarizd.dao.IUserDao">
+
+        <select id="findUser"  resultType="Map">
+		    SELECT * FROM humans where identity = #{identity} limit #{nextPage},#{end}
+		</select>
+		
+		<select id="findHumanDao" parameterType="String" resultType="Map">
+		    SELECT * FROM humans where schoolNumber = #{schoolNumber}
+		</select>
+		
+		 <select id="findAllCourse" parameterType="int" resultType="Map">
+		     select *,(select userName from humans WHERE id = c.tchid) as teacher ,DATE_FORMAT(c.creattime,'%Y-%m-%d %H:%i:%s') as time from courseinfo AS c limit #{nextPage},#{end}
+		</select>
+		
+		<insert id="insertPub" parameterType="String">  
+		   INSERT INTO systembulletin VALUES ((SELECT REPLACE(UUID(),'-','') AS id),#{formTitle},#{formTextarea},DATE_FORMAT(NOW(),'%Y-%m-%d %H:%i:%s'))      
+		</insert>
+		
+        <update id="updateStudent" parameterType="String">  
+            UPDATE humans SET password=#{formPassword},age=#{formAge},address=#{formAddress} WHERE schoolNumber=#{formSchoolNumber}
+        </update>
+        
+        <select id="findSystembulletin" parameterType="int" resultType="Map">
+		    SELECT *,DATE_FORMAT(s.creattime,'%Y-%m-%d %H:%i:%s') as time FROM systembulletin as s limit #{nextPage},#{end}
+		</select>
+		
+		<select id="findTchCourseInfo" resultType="Map">
+		    SELECT * FROM(SELECT *,(SELECT userName FROM humans where id = a.STUid) AS student, (SELECT userName FROM humans where id = a.TCHid) AS teacher,DATE_FORMAT(a.creattime,'%Y-%m-%d %H:%i:%s') AS time,(SELECT schoolNumber FROM humans where id = a.TCHid) AS schoolNumber FROM appointment a where a.ststus = '1') t WHERE t.schoolNumber = #{schoolNumber} order by t.creattime DESC
+		</select>
+		
+		<insert id="insertCourseinfo" >  
+		    INSERT INTO courseinfo VALUES ((SELECT REPLACE(UUID(),'-','') AS id),(SELECT id FROM humans where schoolNumber = #{schoolNumber}),#{formTitle},#{formTextarea},NOW())      
+		</insert>
+		
+		<select id="findTchCourse" resultType="Map">
+		    SELECT *,(SELECT userName FROM humans where id = c.tchid) AS teacher,DATE_FORMAT(c.creattime,'%Y-%m-%d %H:%i:%s') AS time FROM courseinfo c where c.tchid = (SELECT id FROM humans where schoolNumber = #{schoolNumber}) ORDER BY c.creattime DESC limit #{nextPage},#{end}
+		</select>
+		
+	    <update id="updateTchCourseInfo" parameterType="String">  
+            UPDATE courseinfo SET coursename=#{formCoursename},courseinfo=#{formCourseinfo},creattime=now() WHERE id=#{id}
+        </update>
+        
+        <update id="updateAchievement" parameterType="String">  
+            UPDATE appointment SET achievement=#{achievement},creattime=now() WHERE id=#{id}
+        </update>
+		
+		<select id="findStuCourseInfo" resultType="Map">
+		    SELECT * FROM(SELECT *,(SELECT userName FROM humans where id = a.STUid) AS student, (SELECT userName FROM humans where id = a.TCHid) AS teacher,DATE_FORMAT(a.creattime,'%Y-%m-%d %H:%i:%s') AS time,(SELECT schoolNumber FROM humans where id = a.STUid) AS schoolNumber FROM appointment a ) t WHERE t.schoolNumber = #{schoolNumber} order by t.creattime DESC
+		</select>
+		
+		<select id="findCourseAll" resultType="Map">
+		    SELECT *,(SELECT userName FROM humans where id = c.tchid) AS teacher,DATE_FORMAT(c.creattime,'%Y-%m-%d %H:%i:%s') AS time FROM courseinfo c ORDER BY c.creattime DESC limit #{nextPage},#{end}
+		</select>
+		
+		<insert id="insertStuAppointment" >
+		      INSERT INTO appointment VALUES((SELECT REPLACE(UUID(),'-','') AS id),(SELECT id FROM humans WHERE schoolNumber=#{schoolNumber}), '0',#{tchid},#{coursename},#{courseinfo},'',NOW())
+		</insert>
+		
+		<update id="updateStatus" parameterType="String">  
+            UPDATE appointment SET ststus = '1',creattime=now() WHERE id=#{id}
+        </update>
+</mapper>

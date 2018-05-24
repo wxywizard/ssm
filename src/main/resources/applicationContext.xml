@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mvc="http://www.springframework.org/schema/mvc"
+    xmlns:context="http://www.springframework.org/schema/context"
+    xmlns:aop="http://www.springframework.org/schema/aop" xmlns:tx="http://www.springframework.org/schema/tx"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans 
+            http://www.springframework.org/schema/beans/spring-beans-3.0.xsd 
+            http://www.springframework.org/schema/mvc 
+            http://www.springframework.org/schema/mvc/spring-mvc-3.0.xsd 
+            http://www.springframework.org/schema/context 
+            http://www.springframework.org/schema/context/spring-context-3.0.xsd 
+            http://www.springframework.org/schema/aop 
+            http://www.springframework.org/schema/aop/spring-aop-3.0.xsd 
+            http://www.springframework.org/schema/tx 
+            http://www.springframework.org/schema/tx/spring-tx-3.0.xsd ">
+     
+     <!-- 扫描组件 -->      
+    <context:component-scan base-package="com.wxywarizd">
+         <context:exclude-filter type="regex" expression="com.wxywarizd.controller"/>
+    </context:component-scan>
+    
+    <!-- 分解配置 jdbc.properites -->
+   <!--  <context:property-placeholder location="classpath:jdbc.properties" /> -->
+    
+    <!-- 定义数据源Bean -->
+    <!-- Druid -->
+    <bean id="dataSource" class="com.alibaba.druid.pool.DruidDataSource">
+         <property name="driverClassName" value="com.mysql.cj.jdbc.Driver"></property>
+        <property name="url" value="jdbc:mysql://localhost:3306/test?serverTimezone=GMT&amp;useSSL=false " /><!-- jdbc:mysql://localhost:3306/test?serverTimezone=GMT&amp;useSSL=true -->
+        <property name="username" value="root" />
+        <property name="password" value="root123" />
+     
+    </bean>
+
+    <!-- 注册SqlSessionFactoryBean -->
+    <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
+        <property name="dataSource" ref="dataSource" />
+        <!-- 自动扫描mappers.xml文件 -->
+        <property name="mapperLocations" value="classpath:com/wxywarizd/dao/*.xml" />
+        <property name="configLocation" value="classpath:mybatis-config.xml"></property>
+        
+    </bean>
+    
+    <!-- DAO接口所在包名，Spring会自动查找其下的类 -->
+    <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
+        <property name="basePackage" value="com.wxywarizd.dao" />
+        <property name="sqlSessionFactoryBeanName" value="sqlSessionFactory" />
+    </bean>
+     <!-- 开启AOP注解扫描 -->
+    <aop:aspectj-autoproxy proxy-target-class="true" />
+
+    <!-- 事务管理器，依赖于数据源 -->
+    <bean id="txManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+        <property name="dataSource" ref="dataSource" />
+    </bean>
+    
+    <!-- 编写通知：对事务进行增强（通知），需要编写对切入点和具体执行事务细节 -->
+    <tx:advice id="txAdvice" transaction-manager="txManager">
+        <tx:attributes>
+            <!--
+                为切入点方法添加事务详情
+                name：方法名，*表示任意方法名称
+                propagation：设置传播行为
+                isolation：设置隔离级别
+                read-only：是否只读
+            -->
+            <tx:method name="add*" propagation="REQUIRED" isolation="DEFAULT" read-only="false" rollback-for="Exception" />
+            <tx:method name="delete*" propagation="REQUIRED" isolation="DEFAULT" read-only="false" rollback-for="Exception" />
+            <tx:method name="update*" propagation="REQUIRED" isolation="DEFAULT" read-only="false" rollback-for="Exception" />
+        </tx:attributes>
+    </tx:advice>
+    
+    <!-- 设置AOP，让Spring自动对目标生成代理，需要使用AspectJ表达式 -->
+    <aop:config proxy-target-class="true">
+        <!-- 切面：整合切入点和通知 -->
+        <aop:advisor advice-ref="txAdvice" pointcut="within(com.wxywarizd.web..*)" />
+    </aop:config>
+</beans>

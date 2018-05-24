@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration
+  PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+    <!-- 设置别名 -->
+    <typeAliases>
+      <!--   <typeAlias type="com.xxy.User" alias="User"> -->
+        <package name="com.wxywarizd.domain" />
+    </typeAliases>
+    
+<!--     <mappers>
+      <mapper resource="com/wxywarizd/domain/User.mapper.xml"/>
+    </mappers> -->
+     <!-- 这里不需要再注册mybatis的SQL映射文件 ，因为在Spring的配置文件中配置sqlSessionFactory时注册了mapper的路径-->
+</configuration>
