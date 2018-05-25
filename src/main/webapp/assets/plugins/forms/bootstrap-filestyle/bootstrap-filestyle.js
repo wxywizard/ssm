@@ -136,7 +136,7 @@
 
         htmlInput: function () {
             if (this.options.input) {
-                return '<input type="text" class="'+this.options.classInput+'" disabled> ';
+                return '<input type="text" class="'+this.options.classInput+'" disabled style="width:80%"> ';
             } else {
                 return '';
             }
@@ -154,20 +154,25 @@
             }
 
             html = this.htmlInput()+
-                 '<label for="'+id+'" class="'+this.options.classButton+'">'+
+              /*   '<label for="'+id+'" class="'+this.options.classButton+'">'+
                     this.htmlIcon()+
                     '<span>'+this.options.buttonText+'</span>'+
-                 '</label>';
+                 '</label>';*/
+            '<label for="'+id+'" >'+
+
+            '</label>';
 
             this.$elementFilestyle = $('<div class="bootstrap-filestyle" style="display: inline;">'+html+'</div>');
 
             // hidding input file and add filestyle
             this.$element
-                .css({'position':'fixed','left':'-500px'})
+              //  .css({'position':'fixed','left':'-500px'})
+            //添加自定义css
+                .css({'position':'fixed','left':'4%','top':'12%'})
                 .after(this.$elementFilestyle);
 
             // Getting input file value
-            this.$element.change(function () {
+         /*   this.$element.change(function () {
                 var content = '';
                 if (this.files === undefined) {
                     files[0] = {'name': this.value};
@@ -183,7 +188,7 @@
                     _self.$elementFilestyle.find(':text').val(content.replace(/\, $/g, ''));
                 }
             });
-
+*/
             // Check if browser is Firefox
             if (window.navigator.userAgent.search(/firefox/i) > -1) {
                 // Simulating choose file for firefox
